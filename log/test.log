@@ -1,0 +1,69 @@
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "foods"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "foods" ("name", "restaurant", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2013-05-14 07:45:05', '2013-05-14 07:45:05', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "foods" ("name", "restaurant", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2013-05-14 07:45:05', '2013-05-14 07:45:05', 298486374)
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFood Load (1.2ms)[0m  [1mSELECT "foods".* FROM "foods" WHERE "foods"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "foods" 
+Processing by FoodsController#create as HTML
+  Parameters: {"food"=>{"name"=>"MyString", "restaurant"=>"MyString"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "foods" ("created_at", "name", "restaurant", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 14 May 2013 07:45:05 UTC +00:00], ["name", "MyString"], ["restaurant", "MyString"], ["updated_at", Tue, 14 May 2013 07:45:05 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/foods/980190963
+Completed 302 Found in 6ms (ActiveRecord: 1.5ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "foods" 
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFood Load (0.1ms)[0m  [1mSELECT "foods".* FROM "foods" WHERE "foods"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "foods" 
+Processing by FoodsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mFood Load (0.0ms)[0m  [1mSELECT "foods".* FROM "foods" WHERE "foods"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "foods" WHERE "foods"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/foods
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "foods" [0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFood Load (0.1ms)[0m  SELECT "foods".* FROM "foods" WHERE "foods"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by FoodsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mFood Load (0.0ms)[0m  [1mSELECT "foods".* FROM "foods" WHERE "foods"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  Rendered foods/_form.html.erb (6.9ms)
+Completed 200 OK in 22ms (Views: 21.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFood Load (0.1ms)[0m  SELECT "foods".* FROM "foods" WHERE "foods"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by FoodsController#index as HTML
+  [1m[36mFood Load (0.1ms)[0m  [1mSELECT "foods".* FROM "foods" [0m
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mFood Load (0.1ms)[0m  SELECT "foods".* FROM "foods" WHERE "foods"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by FoodsController#new as HTML
+  Rendered foods/_form.html.erb (2.2ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFood Load (0.1ms)[0m  [1mSELECT "foods".* FROM "foods" WHERE "foods"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by FoodsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mFood Load (0.1ms)[0m  SELECT "foods".* FROM "foods" WHERE "foods"."id" = ? LIMIT 1  [["id", "980190962"]]
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mFood Load (0.1ms)[0m  [1mSELECT "foods".* FROM "foods" WHERE "foods"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by FoodsController#update as HTML
+  Parameters: {"food"=>{"name"=>"MyString", "restaurant"=>"MyString"}, "id"=>"980190962"}
+  [1m[35mFood Load (0.0ms)[0m  SELECT "foods".* FROM "foods" WHERE "foods"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/foods/980190962
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
