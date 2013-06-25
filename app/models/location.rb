@@ -20,6 +20,9 @@ class Location
                               
     c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a))
     
-    earths_radius * c    
+    kilometers_away = earths_radius * c
+    miles_away = kilometers_away / 1.60934
+
+    miles_away_rounded = (miles_away * 10).round / 10.0
   end
 end
