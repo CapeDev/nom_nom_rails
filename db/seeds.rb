@@ -12,7 +12,7 @@ Food.create(name: 'Pho',
             longitude: 37.783448,
             latitude: -122.417731)
 Food.create(name: 'Vietnamese Sandwich', 
-            restaurant:'Saigon Sanwiches',
+            restaurant:'Saigon Sandwiches',
             picture: 'CnRqAAAApUdTI21ddoZ9QejAb4T7LPUuzZR02UP83o3kK1opJ9z7ll-1lCn3t1pl1ZAEj2lXIJaOHc4aUMqvhDWdHTjrgwyv2QtDOnEvw6SQmHytUTk7zN3p41x65XfbbfPV2SMN4IyGAltdLTWwLqww9d60fxIQcoOB52lhYUk1EoGocrPhhhoUmcsCeSLD_v7FGBhQPf-TdzYZbHc',
             restaurant_id: 'aa94a2548fdb1b91d8d3e974554127af2821bddf', 
             longitude: 37.783125,
