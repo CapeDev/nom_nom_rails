@@ -23,8 +23,8 @@ class LocationTest < ActiveSupport::TestCase
   test "is valid? for string input" do
     location = Location.new({:latitude => "37.76313", :longitude => "-122.42398"})
     assert location.valid?
-    assert 37.76313, location.latitude 
-    assert -122.42398, location.longitude 
+    assert_equal 37.76313, location.latitude 
+    assert_equal -122.42398, location.longitude 
   end
 
   
