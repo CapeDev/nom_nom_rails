@@ -9,4 +9,23 @@ class LocationTest < ActiveSupport::TestCase
     distance_away = guerrero_and_17th.haversine_distance_from_point(guerrero_and_26th)
     assert_equal distance_away,1
   end
+  
+  test "is not valid? when args are nil" do
+    assert Location.new({}).valid?
+    assert Location.new({:latitude => nil, :longitude => 123}).valid?
+    assert Location.new({:latitude => 37.76313, :longitude => nil}).valid?
+  end
+
+  test "is valid?" do
+    assert Location.new({:latitude => 37.76313, :longitude => -122.42398}).valid?
+  end
+
+  test "is valid? for string input" do
+    location = Location.new({:latitude => "37.76313", :longitude => "-122.42398"})
+    assert location.valid?
+    assert 37.76313, location.latitude 
+    assert -122.42398, location.longitude 
+  end
+
+  
 end

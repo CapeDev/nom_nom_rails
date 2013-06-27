@@ -5,6 +5,7 @@ development:
   pool: 5
   username: nom_nom
   password: nom_nom
+  port: 5432
 test:
   adapter: postgresql
   encoding: unicode

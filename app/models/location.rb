@@ -3,14 +3,14 @@ class Location
   attr_accessor :latitude
   
   def initialize(coordinates)
-    @longitude = coordinates[:longitude]
-    @latitude = coordinates[:latitude] 
+    @longitude = coordinates[:longitude].to_f
+    @latitude = coordinates[:latitude].to_f
   end
   
   def haversine_distance_from_point(coordinates)            
     earths_radius = 6371 # in km
-    latitude_difference_in_radians = (coordinates.latitude - @latitude) * Math::PI / 180
-    longitude_difference_in_radians = (coordinates.longitude - @longitude) * Math::PI / 180
+    latitude_difference_in_radians = (coordinates.latitude.to_f - @latitude) * Math::PI / 180
+    longitude_difference_in_radians = (coordinates.longitude.to_f - @longitude) * Math::PI / 180
     
     current_location_latitude_in_radians = @latitude * Math::PI / 180
     current_location_longitude_in_radians = @longitude * Math::PI / 180
@@ -25,4 +25,9 @@ class Location
 
     miles_away_rounded = (miles_away * 10).round / 10.0
   end
+  
+  def valid?
+    !@longitude.nil? and !@latitude.nil?
+  end
+  
 end
