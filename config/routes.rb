@@ -1,5 +1,7 @@
 NomNomServer::Application.routes.draw do
-  resources :foods
+  resources :foods do
+    resources :image
+  end
   resources :search
 
 
