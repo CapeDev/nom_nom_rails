@@ -1,3 +1,6 @@
 log/*.log
 db/*.sqlite3
 tmp
+public/data/*.png
+public/data/*.jpg
+public/data/*.jpeg

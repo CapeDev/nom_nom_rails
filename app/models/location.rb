@@ -3,8 +3,8 @@ class Location
   attr_accessor :latitude
   
   def initialize(coordinates)
-    @longitude = coordinates[:longitude].to_f
-    @latitude = coordinates[:latitude].to_f
+    @longitude = coordinates[:longitude].to_f if coordinates[:longitude]
+    @latitude = coordinates[:latitude].to_f if coordinates[:latitude]
   end
   
   def haversine_distance_from_point(coordinates)            

@@ -11,9 +11,9 @@ class LocationTest < ActiveSupport::TestCase
   end
   
   test "is not valid? when args are nil" do
-    assert Location.new({}).valid?
-    assert Location.new({:latitude => nil, :longitude => 123}).valid?
-    assert Location.new({:latitude => 37.76313, :longitude => nil}).valid?
+    assert Location.new({}).valid? != true
+    assert Location.new({:latitude => nil, :longitude => 123}).valid? != true
+    assert Location.new({:latitude => 37.76313, :longitude => nil}).valid? != true
   end
 
   test "is valid?" do
