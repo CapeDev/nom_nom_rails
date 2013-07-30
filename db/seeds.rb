@@ -7,13 +7,13 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)   
 Food.create(name: 'Pho', 
             restaurant:'Bodega Bistro', 
-            picture: 'CnRqAAAAol3yybatfGETONhTRo6VA7xqQ_jlg5dwYlIpiCukXmhGCSxY5qpfP6cA_EwFcPiT1Xru7emDNJ6lNT-h27nGeScaWbBbhjeaMFcgDKS1zWcxNb7_yPR-Hw6Sy3XBwsvtvc3MudE0ebg0KFVsVzKbhhIQ-kp-8by8Msrt3KZ-AWDRlRoUN7kZig5yRWTikSpIazF_GvH5wuQ', restaurant_id: 'd88761be6f94c9b4f3114e002dbb2645de2ed61c',
+            picture: 'https://lh6.googleusercontent.com/-QQxtt2PygDo/TvuHfWUtHkI/AAAAAAAABa4/3NCA6tpX5zo/s1600-w400/Bodega%2BBistro', restaurant_id: 'd88761be6f94c9b4f3114e002dbb2645de2ed61c',
             restaurant_id: 'd88761be6f94c9b4f3114e002dbb2645de2ed61c',
             longitude: -122.417731, 
             latitude: 37.783448)
 Food.create(name: 'Vietnamese Sandwich', 
             restaurant:'Saigon Sandwiches',
-            picture: 'CnRqAAAApUdTI21ddoZ9QejAb4T7LPUuzZR02UP83o3kK1opJ9z7ll-1lCn3t1pl1ZAEj2lXIJaOHc4aUMqvhDWdHTjrgwyv2QtDOnEvw6SQmHytUTk7zN3p41x65XfbbfPV2SMN4IyGAltdLTWwLqww9d60fxIQcoOB52lhYUk1EoGocrPhhhoUmcsCeSLD_v7FGBhQPf-TdzYZbHc',
+            picture: 'https://lh4.googleusercontent.com/-0iqFEUVvAos/UTp24Vkw51I/AAAAAAAADjM/q7ISKr2RSy8/s1600-w400/PC061085.JPG',
             restaurant_id: 'aa94a2548fdb1b91d8d3e974554127af2821bddf', 
             longitude: -122.417372, 
             latitude: 37.783125)
