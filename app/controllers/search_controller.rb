@@ -7,7 +7,7 @@ class SearchController < ApplicationController
     results = Food.all
     
     results.each do |result|
-      result.picture = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&sensor=false&key=#{@@key}&photoreference=#{result.picture}"
+      result.picture = "#{result.picture}"
       result.distance_away = user_location.haversine_distance_from_point(result) if user_location.valid?
     end
 
