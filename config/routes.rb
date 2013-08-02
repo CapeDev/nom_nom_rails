@@ -2,7 +2,10 @@ NomNomServer::Application.routes.draw do
   resources :foods do
     resources :image
   end
+
   resources :search
+
+  resources :add
 
 
   # The priority is based upon order of creation:
