@@ -3,13 +3,21 @@ class Image < ActiveRecord::Base
   attr_accessible :name
 
   belongs_to :food
+
+  IMAGE_DIRECTORY = 'public/data'
   
   def self.build_with_image(upload)
-    # TODO: find something better than timestamp. Will do for now.
     name =  "#{Time.now.to_i}.png"
-    directory = "public/data"
-    path = File.join(directory, name)
+    path = File.join(IMAGE_DIRECTORY, name)
     File.open(path, "wb") { |f| f.write(upload.read) }
     Image.new(:path => path, :name => name)
    end
+
+  def self.build_with_base_64_encoded_image(image_encoded_as_base64)
+    name =  "#{Time.now.to_i}.png"
+    path = File.join(IMAGE_DIRECTORY, name)
+    decoded_image = Base64.decode64(image_encoded_as_base64)
+    File.open(path, 'wb') { |f| f.write(decoded_image) }
+    Image.new(:path => path, :name => name)
+  end
 end

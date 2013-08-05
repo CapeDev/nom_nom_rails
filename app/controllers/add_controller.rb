@@ -4,7 +4,7 @@ class AddController < ApplicationController
     if params[:image].nil? || params[:name].nil? || params[:longitude].nil? || params[:latitude].nil?
       head :bad_request
     else
-      image = Image.build_with_image(params[:image])
+      image = Image.build_with_base_64_encoded_image(params[:image])
 
       Food.create(name: params[:name],
                   restaurant: 'RetrieveFromGoogle',
