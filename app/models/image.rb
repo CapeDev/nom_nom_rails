@@ -6,13 +6,6 @@ class Image < ActiveRecord::Base
 
   IMAGE_DIRECTORY = 'public/data'
   
-  def self.build_with_image(upload)
-    name =  "#{Time.now.to_i}.png"
-    path = File.join(IMAGE_DIRECTORY, name)
-    File.open(path, "wb") { |f| f.write(upload.read) }
-    Image.new(:path => path, :name => name)
-   end
-
   def self.build_with_base_64_encoded_image(image_encoded_as_base64)
     name =  "#{Time.now.to_i}.png"
     path = File.join(IMAGE_DIRECTORY, name)
