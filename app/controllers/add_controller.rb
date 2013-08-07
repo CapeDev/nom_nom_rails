@@ -7,7 +7,7 @@ class AddController < ApplicationController
       image = Image.build_with_base_64_encoded_image(params[:image])
 
       Food.create(name: params[:name],
-                  restaurant: 'RetrieveFromGoogle',
+                  restaurant: params[:restaurant],
                   picture: "#{request.protocol}#{request.host_with_port}/data/#{image.name}",
                   restaurant_id: 'RetrieveFromGoogle',
                   longitude: params[:longitude],

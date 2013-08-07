@@ -3,8 +3,9 @@ class SearchController < ApplicationController
   
   def index
     user_location = Location.new(params)
-    
+
     results = Food.find_by_name(params[:search_term])
+    
     results = [results].flatten.compact
 
     results.each do |result|
